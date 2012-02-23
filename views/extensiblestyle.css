@@ -1,0 +1,136 @@
+  body {
+    padding-left: 10em;
+    font-family: Comic Sans MS, Comic Sans MS, cursive;
+    color: #2c6700;
+    background:url(/back1.png);
+    background-position: right top;
+    background-repeat: repeat }
+    
+#titlecap {
+text-decoration:none;
+}
+
+#titlecap a {
+	text-decoration: none;
+	text-align:center }
+#titlecap a:link {
+	color: #99ff99;}
+#titlecap a:visited {
+	color: #669999;
+}
+#titlecap a:active{
+	color: #cccc99}
+#titlecap a:hover{
+	text-decoration:underline;
+	color: #cc99ff}
+    
+ #textblock{
+ width: 750px;
+ margin: 0 auto;
+ padding: 0 5px;
+ background-color: black;
+ text-align:center;}
+ 
+ 	#textblock h2{
+ 	background-color: #001100
+ 	}
+
+ 	#textblock ul.rules{
+ 	text-align:left
+ 	}
+
+ 	#textblock dt{
+ 	color:#00ee00;
+ 	}
+ 
+#subjectslist{
+ width: 750px;
+ height:305px;
+ margin: 0 auto;
+ padding: 0 5px;
+ background-color: #001100;
+
+ }
+ 
+#subjectslist table.substable{
+table-layout: auto;
+width: 750px;
+height:200px;
+margin: 0 auto;
+padding: 0 0px;
+background-color: black;
+}
+
+#subjectslist table.substable th{
+background-color: #002200;
+}
+
+#title h1 {
+	width: 850px;
+	margin: 0 auto;
+	background-color: #004400;
+	background-image:url(side1.gif);
+	background-repeat:no-repeat;
+	background-position:left;
+	text-align:center;
+	}
+#title a{
+	text-decoration:none;
+	color: #99ff99;
+}
+ 
+#navigation ul.navigationlist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 4em;
+    left: 1em;
+    width: 9em }
+
+#navigation  ul.navigationlist li {
+	background: #336633;
+	background-image:url(side3.gif);
+	background-repeat:no-repeat;
+	background-position:left-top;
+	margin: 0.3em 0;
+	padding: 0.3em;
+	text-align:right;
+	border-right: 1em solid #004400 }
+	
+		#navigation  ul a {
+			text-decoration: none;
+			text-align:right }
+		#navigation a:link {
+			color: #99ff99;
+			text-align:center }
+		#navigation  a:visited {
+			color: #669999;
+			text-align:center }
+		#navigation  a:active{
+			color: #cccc99}
+		#navigation  a:hover{
+			text-decoration:underline;
+			color: #cc99ff}
+			
+#subjectslist ul{
+text-decoration:none;
+}
+
+#subjectslist ul a {
+	text-decoration: none;
+	text-align:center }
+#subjectslist a:link {
+	color: #99ff99;}
+#subjectslist a:visited {
+	color: #669999;
+}
+#subjectslist a:active{
+	color: #cccc99}
+#subjectslist a:hover{
+	text-decoration:underline;
+	color: #cc99ff}
+	
+#uploading, #imgreply{
+	background-color: #002200;
+}

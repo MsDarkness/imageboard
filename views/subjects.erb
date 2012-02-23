@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @subject %></title>
+	<link rel="stylesheet" href="extensiblestyle.css">
+
+<!-- $$$$$$$$$$$$$$ This block of code is here just to make subjects page pretty too. didn't read from css $$$$$$$$$$$$$$ -->
+<style ="text/css">
+  body {
+    padding-left: 10em;
+    font-family: Comic Sans MS, Comic Sans MS, cursive;
+    color: #2c6700;
+    background:url(/back1.png);
+    background-position: right top;
+    background-repeat: repeat }
+    
+#titlecap {
+text-decoration:none;
+}
+
+#titlecap a {
+	text-decoration: none;
+	text-align:center }
+#titlecap a:link {
+	color: #99ff99;}
+#titlecap a:visited {
+	color: #669999;
+}
+#titlecap a:active{
+	color: #cccc99}
+#titlecap a:hover{
+	text-decoration:underline;
+	color: #cc99ff}
+    
+ #textblock{
+ width: 750px;
+ margin: 0 auto;
+ padding: 0 5px;
+ background-color: black;
+ text-align:center;}
+ 
+ 	#textblock h2{
+ 	background-color: #001100
+ 	}
+
+ 	#textblock ul.rules{
+ 	text-align:left
+ 	}
+
+ 	#textblock dt{
+ 	color:#00ee00;
+ 	}
+ 
+#subjectslist{
+ width: 750px;
+ height:305px;
+ margin: 0 auto;
+ padding: 0 5px;
+ background-color: #001100;
+
+ }
+ 
+#subjectslist table.substable{
+table-layout: auto;
+width: 750px;
+height:200px;
+margin: 0 auto;
+padding: 0 0px;
+background-color: black;
+}
+
+#subjectslist table.substable th{
+background-color: #002200;
+}
+
+#title h1 {
+	width: 850px;
+	margin: 0 auto;
+	background-color: #004400;
+	background-image:url(/side1.gif);
+	background-repeat:no-repeat;
+	background-position:left;
+	text-align:center;
+	}
+#title a{
+	text-decoration:none;
+	color: #99ff99;
+}
+ 
+#navigation ul.navigationlist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 4em;
+    left: 1em;
+    width: 9em }
+
+#navigation  ul.navigationlist li {
+	background: #336633;
+	background-image:url(/side3.gif);
+	background-repeat:no-repeat;
+	background-position:left-top;
+	margin: 0.3em 0;
+	padding: 0.3em;
+	text-align:right;
+	border-right: 1em solid #004400 }
+	
+		#navigation  ul a {
+			text-decoration: none;
+			text-align:right }
+		#navigation a:link {
+			color: #99ff99;
+			text-align:center }
+		#navigation  a:visited {
+			color: #669999;
+			text-align:center }
+		#navigation  a:active{
+			color: #cccc99}
+		#navigation  a:hover{
+			text-decoration:underline;
+			color: #cc99ff}
+			
+#subjectslist ul{
+text-decoration:none;
+}
+
+#subjectslist ul a {
+	text-decoration: none;
+	text-align:center }
+#subjectslist a:link {
+	color: #99ff99;}
+#subjectslist a:visited {
+	color: #669999;
+}
+#subjectslist a:active{
+	color: #cccc99}
+#subjectslist a:hover{
+	text-decoration:underline;
+	color: #cc99ff}
+	
+#uploading, #imgreply{
+	background-color: #002200;
+}
+
+</style>
+<!-- $$$$$$$$$$$$$$$$$$$$$$$$$ This is the end of the make subject page pretty section $$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+  </head>
+  <body>
+  
+<!--=========================== navigation links ====================================== -->
+  <div id="navigation">
+<ul class="navigationlist">
+	<li><a href="/">Home</a>
+	<li><a href="/rules">Rules</a>
+	<li><a href="/faq">FAQ</a>
+	<li><a href="/about">Founders</a>
+</ul>
+</div>
+
+
+<!--=========================== site title ============================================= -->
+<div id="title">
+    <h1 class="titlecap"><a href="/" title="Home">Extensible Presentment</a></h1>
+</div>
+
+<!--=========================== posts block ==================================== -->
+<div id="textblock">
+    <h2 class="subtitlecap"><%= @subject %></h2>
+    
+<!--########################### image upload block ########################### -->
+<div id="uploading">
+    <h2>Upload an image and/or post a comment</h2>
+    
+    <form method="POST" action="/<%= @subject %>/" enctype="multipart/form-data" />
+      <input type="file" size="50" name="file" />
+      <p>
+	      Enter Comment: <input type="text" size="50" name="comment" />
+	    </p>
+      <input type="submit" value="Upload"/>
+    </form>
+</div>   
+    <br>
+    <br>
+<!--########################### image posts block ########################### -->
+<div id="imgposts">
+     <h3>Past Comments</h3>
+    <% if @past_posts %>
+      <% @numPosts.each do |post|%>
+        <h4><%= @past_posts[6*post.to_i-6] %></h4>
+        <p><%= @past_posts[6*post.to_i-5] %></p>
+        <p><%= @past_posts[6*post.to_i-4] %></p>
+        <p><%= @past_posts[6*post.to_i-3] %></p>
+        <br>
+
+        <%= @past_posts[6*post.to_i-2] %>
+         <%= @past_posts[6*post.to_i-1] %></p>
+      <% end %>  
+    <% end %></div>
+       
+    <!--NEWEST POST -->
+	<!-- how about we just loop the whole thing and add the new to the @poast_posts instead so that we don't try an print in 2 different places which started the confusion with the IMG tag
+    <% if @comment %>
+	  <p>POST# <%= @postID %></p>
+      <p>Time: <%= @time %></p>
+      <p>Comment: <%= @comment %></p>
+    <% end %>
+    <% if @filename %>
+      Image: <A HREF="/images/<%= @filename %>">
+      <IMG HEIGHT=100 WIDTH=100 SRC="/images/<%= @filename %>"></A>
+    <% end %>
+	-->
+  </body>
+</html>
